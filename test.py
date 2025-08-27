@@ -37,7 +37,6 @@ if st.button("🍽️ 디저트 완성하기!"):
     st.markdown("### 📦 다시 만들어보고 싶으면 재료를 바꿔보세요!")
    if st.button("🍽️ 디저트 완성하기!"):
 
-    # 🆕 디저트 이름 생성
     dessert_name = generate_dessert_name(flour, sweetener, fat, topping)
     st.markdown(f"## 🍩 오늘 만든 디저트 이름은...\n### 🧁 **{dessert_name}** 🎉")
 
