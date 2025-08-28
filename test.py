@@ -70,5 +70,56 @@ if st.button("🍽️ 디저트 완성하기!"):
     else:
         st.error("😢 뭔가 잘못됐어요... 반죽이 망했어요.")
         st.markdown("💬 **슈:** 꺄악! 반죽이 폭발했어요!! 다시 도전해봐요~ 💦")
+         # 🎯 디저트 점수 계산
+    score = 0
+
+    # 밀가루 점수
+    if flour == "박력분":
+        score += 30
+    elif flour == "중력분":
+        score += 20
+    elif flour == "강력분":
+        score += 25
+
+    # 당류 점수
+    if sweetener == "설탕":
+        score += 30
+    elif sweetener == "꿀":
+        score += 25
+    elif sweetener == "스테비아":
+        score += 15
+
+    # 지방 점수
+    if fat == "버터":
+        score += 30
+    elif fat == "마가린":
+        score += 20
+    elif fat == "식용유":
+        score += 15
+
+    # 토핑 점수
+    topping_scores = {
+        "초콜릿칩": 10,
+        "딸기": 10,
+        "크림치즈": 10,
+        "아몬드": 10,
+        "블루베리": 10
+    }
+    for t in topping:
+        score += topping_scores.get(t, 0)
+
+    # 점수 출력
+    st.markdown(f"### 🧾 디저트 점수: **{score}점 / 100점**")
+
+    # 점수에 따른 반응
+    if score >= 90:
+        st.balloons()
+        st.success("🎉 최고예요! 완벽한 디저트네요!")
+    elif score >= 70:
+        st.info("😋 꽤 괜찮아요! 조합이 좋아요~")
+    elif score >= 50:
+        st.warning("🙂 나쁘지 않지만, 개선할 여지가 있어요.")
+    else:
+        st.error("😢 디저트 점수가 낮아요... 다시 도전해봐요!")
 
     st.markdown("### 📦 다시 만들어보고 싶으면 재료를 바꿔보세요!")
