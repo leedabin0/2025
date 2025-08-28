@@ -36,12 +36,3 @@ if st.button("🍽️ 디저트 완성하기!"):
 
     st.markdown("### 📦 다시 만들어보고 싶으면 재료를 바꿔보세요!")
    if st.button("🍽️ 디저트 완성하기!"):
-
-    dessert_name = generate_dessert_name(flour, sweetener, fat, topping)
-    st.markdown(f"## 🍩 오늘 만든 디저트 이름은...\n### 🧁 **{dessert_name}** 🎉")
-
-    # 기존 결과 조건문들
-    if flour == "박력분" and sweetener == "설탕" and fat == "버터" and "초콜릿칩" in topping:
-        st.image("images/shu_cookies.png", caption="🍪 슈가 초코칩 쿠키를 들고 있어요!", use_column_width=True)
-        st.success("✨ 완벽한 초코칩 쿠키 완성!")
-        st.markdown("💬 **슈:** 우와! 진짜 진짜 맛있어 보여요! 대박이야~ 🍪") 
